@@ -1,0 +1,43 @@
+{
+  "name": "guider.js",
+  "version": "0.0.0",
+  "description": "tool for running tutorial",
+  "main": "lib/guider.min.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "webpack --config config/webpack.config.prod.js",
+    "build:demo": "webpack --config config/webpack.config.demo.js",
+    "postversion": "git push && git describe --tags | xargs git push origin"
+  },
+  "author": "chenyao",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/runtime": "^7.6.3",
+    "core-js": "3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "cssnano": "^4.1.10",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-loader": "^3.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "extract-text-webpack-plugin": "next",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
+  }
+}

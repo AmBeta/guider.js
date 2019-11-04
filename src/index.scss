@@ -1,0 +1,93 @@
+$--theme-color: #FF8F3C !default;
+$--highlighter-border-color: $--theme-color !default;
+$--highlighter-border-style: dashed !default;
+
+$highlighter-border-width: 2px;
+$mask-anim-time: 300ms;
+$max-zindex: 100000;
+
+div.guider_highlighter {
+  border-width: $highlighter-border-width;
+  border-style: $--highlighter-border-style;
+  border-color: $--highlighter-border-color;
+  border-radius: 6px;
+  box-shadow: none;
+  box-sizing: border-box;
+  // make the highlighter click through
+  pointer-events: none;
+  z-index: 100000;
+
+  transition: box-shadow $mask-anim-time;
+
+  &.with-mask {
+    box-shadow: 0 0 4px 2px #FFFFFF,
+                0 0 0 2000px rgba($color: #000000, $alpha: .65);
+  }
+}
+
+div.guider_tooltip {
+  display: none;
+  position: absolute;
+  margin: 0;
+  padding: 10px 20px 15px;
+  border-radius: 5px;
+  min-width: 260px;
+  max-width: 300px;
+  color: #353535;
+  background: #FFFFFF;
+  font-size: 14px;
+  border-radius: 4px;
+  z-index: 100000;
+
+  .guider_tooltip-caret {
+    border: 5px solid #FFFFFF;
+    content: '';
+    position: absolute;
+
+    &.bottom {
+      bottom: -10px;
+      border-top-color: #FFFFFF;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    }
+
+    &.left {
+      left: -10px;
+      top: 10px;
+      border-top-color: transparent;
+      border-right-color: #FFFFFF;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    }
+
+    &.right {
+      right: -10px;
+      top: 10px;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: #FFFFFF;
+    }
+
+    &.top {
+      top: -10px;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: #FFFFFF;
+      border-left-color: transparent;
+    }
+  }
+
+  .guider_tooltip-title {
+    margin-bottom: 5px;
+    .guider_tooltip-title-content {
+      font-size: 16px;
+      .guider_tooltip-title-index {
+        color: $--theme-color;
+        font-size: 26px;
+        margin: 0 3px;
+      }
+    }
+  }
+}
